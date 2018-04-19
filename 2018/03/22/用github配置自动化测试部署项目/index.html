@@ -108,7 +108,7 @@
 <meta property="og:description" content="下边是一个工作流程实例如果react App能够自动的测试和部署，这是不是挺令人惊讶的。通过github和Travis CI （CI是持续集成的意思）能实现这个目标 如果你符合下边的条件，那么本教程适合你: 知道 如何构建一个javascript应用。本例子适用于react应用。所有遵循典型的测试和开发的应用，都可以在此步骤的基础上进行调整 知道 什么是单元测试. 相当的熟悉 git和githu">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*7NIjF1hy4crepll1cnaxzA.png">
-<meta property="og:updated_time" content="2018-03-22T09:07:21.632Z">
+<meta property="og:updated_time" content="2018-03-22T09:53:22.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用github配置自动化测试部署项目">
 <meta name="twitter:description" content="下边是一个工作流程实例如果react App能够自动的测试和部署，这是不是挺令人惊讶的。通过github和Travis CI （CI是持续集成的意思）能实现这个目标 如果你符合下边的条件，那么本教程适合你: 知道 如何构建一个javascript应用。本例子适用于react应用。所有遵循典型的测试和开发的应用，都可以在此步骤的基础上进行调整 知道 什么是单元测试. 相当的熟悉 git和githu">
@@ -409,7 +409,7 @@
 <li><strong>需要</strong> 需要免费的主机去展示你的javascript项目</li>
 </ul>
 <p>本向导将告诉你如何创建一个简单的react的应用，将它推到GitHub，链接到Travis CI 再到 GitHub pages。本教程不关注什么是react</p>
-<h1 id="步骤1、创建一个JavaScript应用程序，添加测试。"><a href="#步骤1、创建一个JavaScript应用程序，添加测试。" class="headerlink" title="步骤1、创建一个JavaScript应用程序，添加测试。"></a>步骤1、创建一个JavaScript应用程序，添加测试。</h1><p>为了达到这篇教程的目的。我将要使用<a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">create-react-app</a>这个框架。这是一个快速创建react项目的一个工具。使用的这个工具创建的项目，里边已经包含了一个简单的单元测试用例</p>
+<h2 id="步骤1、创建一个JavaScript应用程序，添加测试。"><a href="#步骤1、创建一个JavaScript应用程序，添加测试。" class="headerlink" title="步骤1、创建一个JavaScript应用程序，添加测试。"></a>步骤1、创建一个JavaScript应用程序，添加测试。</h2><p>为了达到这篇教程的目的。我将要使用<a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">create-react-app</a>这个框架。这是一个快速创建react项目的一个工具。使用的这个工具创建的项目，里边已经包含了一个简单的单元测试用例</p>
 <p>你已经安装了这个<a href="https://nodejs.org/en/" target="_blank" rel="noopener"> NPM 和 node </a>运行这段命令 <code>node -v</code> 和 <code>NPM   -V</code>检查是否安装成功。</p>
 <p>运行安装程序<code>npm install -g create-react-app</code>安装create-react-app 这个在电脑上</p>
 <ul>
@@ -420,15 +420,15 @@
 <li><p>确保<code>npm run test</code>成功运行。它应该有一个单一的测试套件。<br>-确保<code>npm run build</code>运行成功。它应该在主目录的/build文件下创建了一系列的东西</p>
 </li>
 </ul>
-<h1 id="步骤2、创建一个GitHub库，将你的项目推上去。"><a href="#步骤2、创建一个GitHub库，将你的项目推上去。" class="headerlink" title="步骤2、创建一个GitHub库，将你的项目推上去。"></a>步骤2、创建一个GitHub库，将你的项目推上去。</h1><p>在GitHub上创建一个没有任何文件的新的库空库。确保为您的机器添加了ssh密钥，然后将项目文件全部放到这个库中：</p>
+<h2 id="步骤2、创建一个GitHub库，将你的项目推上去。"><a href="#步骤2、创建一个GitHub库，将你的项目推上去。" class="headerlink" title="步骤2、创建一个GitHub库，将你的项目推上去。"></a>步骤2、创建一个GitHub库，将你的项目推上去。</h2><p>在GitHub上创建一个没有任何文件的新的库空库。确保为您的机器添加了ssh密钥，然后将项目文件全部放到这个库中：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin (URL OF YOUR REPOSITORY)</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 <p>刷新你的github账户，确保本地文件全部推送的github</p>
-<h1 id="步骤3、生成一个GitHub的token。"><a href="#步骤3、生成一个GitHub的token。" class="headerlink" title="步骤3、生成一个GitHub的token。"></a>步骤3、生成一个GitHub的token。</h1><p>On GitHub, 去你的个人账户的设置界面 -&gt; <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Personal Access Tokens</a>.</p>
+<h2 id="步骤3、生成一个GitHub的token。"><a href="#步骤3、生成一个GitHub的token。" class="headerlink" title="步骤3、生成一个GitHub的token。"></a>步骤3、生成一个GitHub的token。</h2><p>On GitHub, 去你的个人账户的设置界面 -&gt; <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Personal Access Tokens</a>.</p>
 <p>生成一个新的token。token是访问github库的一种钥匙。将token保存起来，既然是访问修改你github上库的一种钥匙，好好保存撒。token将在下一节中使用。</p>
 <ul>
 <li><strong>备注</strong> ：token不应该与任何人共享，它本质上提供了一个入口密钥访问来编辑您的库。</li>
 </ul>
-<h1 id="步骤-4、-在你的项目中使用Travis-CI-使用的方式就是在项目的根目录下创建-travis-yml-文件"><a href="#步骤-4、-在你的项目中使用Travis-CI-使用的方式就是在项目的根目录下创建-travis-yml-文件" class="headerlink" title="步骤 4、 在你的项目中使用Travis CI,使用的方式就是在项目的根目录下创建 .travis.yml 文件."></a>步骤 4、 在你的项目中使用Travis CI,使用的方式就是在项目的根目录下创建 .travis.yml 文件.</h1><p>点击这个链接<a href="https://travis-ci.org/" target="_blank" rel="noopener">create a Travis CI profile</a> ，进入Travis官网，用你的GitHub账户登录，登录后，选择用Travis 的GitHub库，将该库选中。选中的库由灰变为绿色。</p>
+<h2 id="步骤-4、-在你的项目中使用Travis-CI-使用的方式就是在项目的根目录下创建-travis-yml-文件"><a href="#步骤-4、-在你的项目中使用Travis-CI-使用的方式就是在项目的根目录下创建-travis-yml-文件" class="headerlink" title="步骤 4、 在你的项目中使用Travis CI,使用的方式就是在项目的根目录下创建 .travis.yml 文件."></a>步骤 4、 在你的项目中使用Travis CI,使用的方式就是在项目的根目录下创建 .travis.yml 文件.</h2><p>点击这个链接<a href="https://travis-ci.org/" target="_blank" rel="noopener">create a Travis CI profile</a> ，进入Travis官网，用你的GitHub账户登录，登录后，选择用Travis 的GitHub库，将该库选中。选中的库由灰变为绿色。</p>
 <p>在创建这个文件之前,在Travis中，打开选中的这个库，打开这个库的右上角的设置. 去这个项目的设置界面 。 添加一个新的环境变量命名为 <strong>github_token</strong>, 将这个变量的值设置为上边的token. 这样Travis将会用这个token访问你的库</p>
 <p>在项目的根目录下，创建名字为 <code>.travis.yml</code> 的文件 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - &quot;stable&quot;</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">  - node_modules</span><br><span class="line">script:</span><br><span class="line">  - npm test</span><br><span class="line">  - npm run build</span><br><span class="line">deploy:</span><br><span class="line">  provider: pages</span><br><span class="line">  skip_cleanup: true</span><br><span class="line">  github_token: $github_token</span><br><span class="line">  local_dir: build</span><br><span class="line">  on:</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
@@ -447,11 +447,11 @@
 <p><code>github_token: $github_token</code> 使用GitHub token。使用名字叫github_token的token。在上边我们在Travis的设置中配置过的。</p>
 <p><code>local_dir: build</code> 告诉 Travis 使用build下的文件进行部署</p>
 <p><code>on: branch: master</code> 告诉 Travis ：我们仅仅在改变master主分支代码的时候的时候，触发部署</p>
-<h1 id="Step-5-在package-json设置主页地址"><a href="#Step-5-在package-json设置主页地址" class="headerlink" title="Step 5. 在package.json设置主页地址"></a>Step 5. 在package.json设置主页地址</h1><p>当你使用GitHub页面，您的项目将被托管在一个URL看起来像这样：</p>
+<h2 id="步骤-5-在package-json设置主页地址"><a href="#步骤-5-在package-json设置主页地址" class="headerlink" title="步骤 5. 在package.json设置主页地址"></a>步骤 5. 在package.json设置主页地址</h2><p>当你使用GitHub页面，您的项目将被托管在一个URL看起来像这样：</p>
 <p><code></code> <code>https://username.github.io/project_name/</code> <code></code></p>
 <p>按照上面的语法，编辑您的文件以添加项目的URL的一个新条目：</p>
 <p><code></code> <code>“homepage”：“https://username.github.io/project_name/”</code> <code></code></p>
-<h1 id="步骤6、commit-push-代码。"><a href="#步骤6、commit-push-代码。" class="headerlink" title="步骤6、commit push 代码。"></a>步骤6、commit push 代码。</h1><p>添加新文件，travis.yml 到Git，将它推到GitHub库。travis将自动开始构建、测试和部署它。</p>
+<h2 id="步骤6、commit-push-代码。"><a href="#步骤6、commit-push-代码。" class="headerlink" title="步骤6、commit push 代码。"></a>步骤6、commit push 代码。</h2><p>添加新文件，travis.yml 到Git，将它推到GitHub库。travis将自动开始构建、测试和部署它。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;Added the travis file and homepage&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 <p>Travis将排队您的项目，并尽快建成它。 <a href="https://travis-ci.org/" target="_blank" rel="noopener">home page</a>。一旦测试和构建  项目完成。在GitHub库上就新创建了一个名为“gh-pages”的新分支。<br><a href="https://username.github.io/project_name/" target="_blank" rel="noopener">访问</a>这个链接，就能看到上传项目的效果了</p>
 
@@ -487,15 +487,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/git代码部分不提交/" rel="prev" title="git代码部分不提交">
+                git代码部分不提交 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -569,7 +569,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -584,7 +584,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -599,7 +601,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -635,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下边是一个工作流程实例"><span class="nav-number">1.</span> <span class="nav-text">下边是一个工作流程实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果你符合下边的条件，那么本教程适合你"><span class="nav-number">1.1.</span> <span class="nav-text">如果你符合下边的条件，那么本教程适合你:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤1、创建一个JavaScript应用程序，添加测试。"><span class="nav-number">2.</span> <span class="nav-text">步骤1、创建一个JavaScript应用程序，添加测试。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤2、创建一个GitHub库，将你的项目推上去。"><span class="nav-number">3.</span> <span class="nav-text">步骤2、创建一个GitHub库，将你的项目推上去。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤3、生成一个GitHub的token。"><span class="nav-number">4.</span> <span class="nav-text">步骤3、生成一个GitHub的token。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤-4、-在你的项目中使用Travis-CI-使用的方式就是在项目的根目录下创建-travis-yml-文件"><span class="nav-number">5.</span> <span class="nav-text">步骤 4、 在你的项目中使用Travis CI,使用的方式就是在项目的根目录下创建 .travis.yml 文件.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#每一句代表的意思是"><span class="nav-number">5.1.</span> <span class="nav-text">每一句代表的意思是:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-5-在package-json设置主页地址"><span class="nav-number">6.</span> <span class="nav-text">Step 5. 在package.json设置主页地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤6、commit-push-代码。"><span class="nav-number">7.</span> <span class="nav-text">步骤6、commit push 代码。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下边是一个工作流程实例"><span class="nav-number">1.</span> <span class="nav-text">下边是一个工作流程实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果你符合下边的条件，那么本教程适合你"><span class="nav-number">1.1.</span> <span class="nav-text">如果你符合下边的条件，那么本教程适合你:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤1、创建一个JavaScript应用程序，添加测试。"><span class="nav-number">1.2.</span> <span class="nav-text">步骤1、创建一个JavaScript应用程序，添加测试。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤2、创建一个GitHub库，将你的项目推上去。"><span class="nav-number">1.3.</span> <span class="nav-text">步骤2、创建一个GitHub库，将你的项目推上去。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤3、生成一个GitHub的token。"><span class="nav-number">1.4.</span> <span class="nav-text">步骤3、生成一个GitHub的token。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤-4、-在你的项目中使用Travis-CI-使用的方式就是在项目的根目录下创建-travis-yml-文件"><span class="nav-number">1.5.</span> <span class="nav-text">步骤 4、 在你的项目中使用Travis CI,使用的方式就是在项目的根目录下创建 .travis.yml 文件.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每一句代表的意思是"><span class="nav-number">1.6.</span> <span class="nav-text">每一句代表的意思是:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤-5-在package-json设置主页地址"><span class="nav-number">1.7.</span> <span class="nav-text">步骤 5. 在package.json设置主页地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤6、commit-push-代码。"><span class="nav-number">1.8.</span> <span class="nav-text">步骤6、commit push 代码。</span></a></li></ol></li></ol></div>
             
 
           </div>
