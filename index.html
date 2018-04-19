@@ -531,7 +531,7 @@
       
         
           
-            <h1 id="Git-Stash"><a href="#Git-Stash" class="headerlink" title="Git Stash"></a>Git Stash</h1><p>git stash 可用来暂存当前正在进行的工作，比如：当前正在进行三个项目a、b、c当老大bc开发完了，a开发了一半。当你的老大让你提交代码的时候。你只想提交已完成的b和c。不想提交a。</p>
+            <h1 id="Git-Stash"><a href="#Git-Stash" class="headerlink" title="Git Stash"></a>Git Stash</h1><p>git stash 可用来暂存当前正在进行的工作，比如：当前正在进行三个项目a、b、c. bc开发完了，a开发了一半。当你的老大让你提交代码的时候。你只想提交已完成的b和c。不想提交a。这时候你会怎么做呢？</p>
 <p>你现在在dev分支，提交了bc之后，需要切换到正式的分支把bc也提交。这时候，如果不把a commit的话，你是不能切换分支的。这时候，就可以先在dev分支上执行 <code>git stash</code> 。然后切换到正式分支提交bc。然后回到dev <code>git stash pop</code>继续开发。</p>
 <p>基础命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$git stash</span><br><span class="line">$do some work</span><br><span class="line">$git stash pop</span><br></pre></td></tr></table></figure></p>
 <p>#进阶：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash save &quot;work in progress for foo feature&quot;</span><br></pre></td></tr></table></figure></p>
